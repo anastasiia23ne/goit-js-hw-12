@@ -1,24 +1,19 @@
 import axios from 'axios';
-import { MESSAGES, MESSAGES_BG_COLORS, showInfoMessage } from './js.js';
 
 const API_KEY = '42598065-1779ad5a953180c3fe77c2809';
 const API_URL = 'https://pixabay.com/api/';
 
-export async function getGalleryData(queryValue) {
-  try {
-    const response = await axios.get(API_URL, {
-      params: {
-        key: API_KEY,
-        q: queryValue,
-        image_type: 'photo',
-        orientation: 'horizontal',
-        safesearch: true,
-      },
-    });
+export async function getImagesByQuery(query, page = 1, perPage = 15) {
+  const params = {
+    key: API_KEY,
+    q: query,
+    image_type: 'photo',
+    orientation: 'horizontal',
+    safesearch: true,
+    page,
+    per_page: perPage,
+  };
 
-    return response.data.hits;
-  } catch (error) {
-    showInfoMessage(`${MESSAGES.exception} ERROR: ${error.message}`, MESSAGES_BG_COLORS.orange);
-    throw error;
-  }
+  const response = await axios.get(API_URL, { params });
+  return response.data;
 }
