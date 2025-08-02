@@ -238,3 +238,7 @@ ul {
 .hvr-grow:active {
     transform: scale(1.05);
 }
+
+.hidden {
+    display: none !important;
+}
