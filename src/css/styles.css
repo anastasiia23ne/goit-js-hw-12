@@ -154,7 +154,6 @@ ul {
     letter-spacing: 0.04em;
 }
 
-/* Loader styles */
 .loader {
     width: 50px;
     height: 50px;
@@ -184,7 +183,6 @@ ul {
     }
 }
 
-/* SimpleLightbox overrides */
 .sl-wrapper {
     background-color: rgba(46, 47, 66, 0.8) !important;
 }
@@ -204,7 +202,6 @@ ul {
     color: #fff !important;
 }
 
-/* Load more button */
 .load-more button{
     display: none;
     margin: 30px auto;
@@ -225,7 +222,7 @@ ul {
     outline: none;
 }
 
-/* Hover grow effect */
+
 .hvr-grow {
     display: inline-block;
     vertical-align: middle;

@@ -44,6 +44,7 @@ form.addEventListener('submit', async e => {
     totalHits = data.totalHits;
 
     if (data.hits.length === 0) {
+      hideLoader();
       showInfoMessage(MESSAGES.warning, MESSAGES_BG_COLORS.red);
       return;
     }
@@ -51,7 +52,8 @@ form.addEventListener('submit', async e => {
     gallery.innerHTML = createGallery(data.hits);
     initializeLightbox();
 
-    if (totalHits > PER_PAGE) {
+   
+    if (currentPage < Math.ceil(totalHits / PER_PAGE)) {
       showLoadMoreButton();
     }
   } catch (err) {
@@ -71,10 +73,12 @@ loadMoreBtn.addEventListener('click', async () => {
     refreshLightbox();
 
     const { height: cardHeight } = gallery.firstElementChild.getBoundingClientRect();
-    window.scrollBy({ top: cardHeight * 2, behavior: 'smooth' });
+    window.scrollBy({
+      top: cardHeight * 2,
+      behavior: 'smooth',
+    });
 
-    const totalPages = Math.ceil(totalHits / PER_PAGE);
-    if (currentPage >= totalPages) {
+    if (currentPage >= Math.ceil(totalHits / PER_PAGE)) {
       hideLoadMoreButton();
       showInfoMessage(MESSAGES.end, MESSAGES_BG_COLORS.red);
     }
