@@ -202,7 +202,7 @@ ul {
     color: #fff !important;
 }
 
-.load-more button{
+.load-more {
     display: none;
     margin: 30px auto;
     padding: 12px 24px;
@@ -216,8 +216,8 @@ ul {
     user-select: none;
 }
 
-.load-more button:hover,
-.load-more button:focus {
+.load-more:hover,
+.load-more:focus {
     background-color: #1a7f74;
     outline: none;
 }
