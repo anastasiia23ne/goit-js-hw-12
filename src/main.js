@@ -11,6 +11,7 @@ import {
 } from './js/render-functions';
 import { MESSAGES, MESSAGES_BG_COLORS, showInfoMessage } from './js/message';
 
+
 const form = document.querySelector('.search-form');
 const gallery = document.querySelector('.gallery');
 const loadMoreBtn = document.querySelector('.load-more');

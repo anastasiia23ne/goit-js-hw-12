@@ -1,4 +1,5 @@
 import iziToast from 'izitoast';
+import 'izitoast/dist/css/iziToast.min.css';
 
 export const MESSAGES = {
   info: 'Please enter a value in the search field!',
