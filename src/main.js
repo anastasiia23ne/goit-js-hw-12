@@ -26,6 +26,7 @@ form.addEventListener('submit', async e => {
   hideLoadMoreButton();
   clearGallery(gallery);
   showLoader();
+   await new Promise(resolve => setTimeout(resolve, 50));
 
   const formData = new FormData(form);
   const searchQuery = formData.get('search').trim();
